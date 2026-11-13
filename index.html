@@ -51,6 +51,32 @@
 .ps-note{margin:34px 0 0;padding:16px 20px;background:#fff;border:2.5px dashed var(--navy);border-radius:18px;font-size:15px;line-height:1.65;color:var(--ink)}
 @media(max-width:900px){.ps-grid,.ps-steps{grid-template-columns:1fr 1fr}.ps-hero{padding-top:28px}.ps-stage{height:min(80vh,680px);border-radius:20px;box-shadow:5px 5px 0 var(--navy)}}
 @media(max-width:520px){.ps-grid,.ps-steps{grid-template-columns:1fr}.ps-wrap{width:calc(100% - 24px)}}
+
+.ps-chips{display:flex;gap:10px;flex-wrap:wrap;margin:26px 0 0}
+.ps-chips a{padding:8px 16px;background:#fff;border:2.5px solid var(--navy);border-radius:999px;box-shadow:3px 3px 0 var(--navy);font:800 14px/1 var(--display);text-decoration:none;color:var(--navy)}
+.ps-chips a:hover{background:var(--sun)}
+.ps-prose{max-width:880px}.ps-prose p{font-size:17px;line-height:1.85;color:var(--ink);margin:0 0 16px}
+.ps-two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.ps-box{background:#fff;border:2.5px solid var(--navy);border-radius:22px;box-shadow:5px 5px 0 var(--navy);padding:24px 26px}
+.ps-box h3{font:800 23px/1.2 var(--display);margin:0 0 10px}
+.ps-box p{font-size:15.5px;line-height:1.75;color:var(--ink);margin:0 0 12px}
+.ps-box ul{margin:0 0 6px;padding-left:20px;line-height:1.75;color:var(--ink);font-weight:600;font-size:15.5px}
+.ps-box li{margin-bottom:6px}
+.ps-box.b1{background:var(--sky)}.ps-box.b2{background:var(--mint)}.ps-box.b3{background:var(--butter)}.ps-box.b4{background:var(--lav)}.ps-box.b5{background:var(--pink)}.ps-box.b6{background:var(--peach)}
+.ps-steps2{list-style:none;margin:0;padding:0;display:grid;gap:18px;counter-reset:t}
+.ps-steps2 li{counter-increment:t;display:grid;grid-template-columns:54px 1fr;gap:18px;background:#fff;border:2.5px solid var(--navy);border-radius:22px;box-shadow:5px 5px 0 var(--navy);padding:20px 24px}
+.ps-steps2 li::before{content:counter(t);display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--gold);border:2.5px solid var(--navy);font:800 22px/1 var(--display)}
+.ps-steps2 h3{font:800 21px/1.25 var(--display);margin:2px 0 6px}
+.ps-steps2 p{font-size:16px;line-height:1.75;color:var(--ink);margin:0 0 8px}
+.ps-quote{margin:0 0 12px;padding:12px 16px;background:#fff;border:2.5px solid var(--navy);border-left:8px solid var(--gold);border-radius:14px;font-weight:700;line-height:1.6}
+details.ps-q{background:#fff;border:2.5px solid var(--navy);border-radius:16px;box-shadow:4px 4px 0 var(--navy);margin:0 0 14px}
+details.ps-q summary{cursor:pointer;padding:16px 20px;font:800 18px/1.4 var(--display);list-style:none}
+details.ps-q summary::-webkit-details-marker{display:none}
+details.ps-q summary::after{content:"＋";float:right;color:var(--gold)}
+details.ps-q[open] summary::after{content:"－"}
+details.ps-q p{margin:0;padding:0 20px 18px;line-height:1.75;color:var(--ink);font-size:16px}
+.ps-sec h2{scroll-margin-top:90px}
+@media(max-width:900px){.ps-two{grid-template-columns:1fr}.ps-steps2 li{grid-template-columns:46px 1fr;padding:16px 16px}}
 </style>
 </head>
 <body>
@@ -61,6 +87,8 @@
 <p class="ps-kicker">Ứng dụng AppNho</p>
 <h1 class="ps-title">Phóng Sinh <span>Online</span></h1>
 <p class="ps-lead">Thả cá koi, rùa và chim trong những khung cảnh 3D yên bình. Gắn tên mình lên từng con vật, gửi một lời nguyện và lưu lại khoảnh khắc bằng video để chia sẻ cho người thân.</p>
+<p class="ps-lead" style="margin-top:12px">Mọi thứ chạy ngay trên trình duyệt, không cần cài đặt, không cần đăng nhập. Bạn chỉ cần chọn cảnh, chọn loài, viết đôi dòng lời nguyện rồi bấm một nút.</p>
+<nav class="ps-chips" aria-label="Mục lục"><a href="#gioi-thieu">Giới thiệu</a><a href="#canh-va-loai">Cảnh và loài vật</a><a href="#cach-dung">Cách dùng</a><a href="#loi-nguyen">Lời nguyện</a><a href="#quay-video">Quay video &amp; chia sẻ</a><a href="#meo">Mẹo hay</a><a href="#hoi-dap">Hỏi đáp</a></nav>
 </div></section>
 
 <section><div class="ps-wrap">
@@ -71,26 +99,101 @@
 </div>
 </div></section>
 
-<section class="ps-sec"><div class="ps-wrap">
-<h2>Có gì trong ứng dụng</h2>
-<p>Mọi thứ chạy ngay trên trình duyệt, không cần đăng nhập.</p>
-<div class="ps-grid">
-<div class="ps-card c1"><div class="ic">🐟</div><h3>Thả cá &amp; rùa</h3><p>Bốn loại cá koi (Kohaku, Ogon, Sanke, Showa) và rùa, thả ở sông, ao hồ hoặc con suối. Nhìn từ trên mặt nước hoặc lặn xuống dưới nước.</p></div>
-<div class="ps-card c2"><div class="ic">🕊️</div><h3>Thả chim</h3><p>Chim sẻ, bồ câu, chào mào bay lên giữa rừng, cao nguyên, thảo nguyên, mùa thu hay mùa xuân. Có con bay đi, có con đáp xuống.</p></div>
-<div class="ps-card c3"><div class="ic">🙏</div><h3>Lời nguyện trình chiếu</h3><p>Chọn câu có sẵn hoặc tự viết. Lời nguyện hiện dần theo kiểu karaoke, phụ đề hoặc từng chữ nổi lên.</p></div>
-<div class="ps-card c4"><div class="ic">🎬</div><h3>Quay video &amp; chia sẻ</h3><p>Ghi video ngang hoặc dọc, tải về hoặc chia sẻ tới Facebook, Instagram, TikTok, X, Zalo. Có nhạc nền nhẹ nhàng.</p></div>
+<section class="ps-sec" id="gioi-thieu"><div class="ps-wrap">
+<h2>Giới thiệu</h2>
+<div class="ps-prose" style="margin-top:18px">
+<p><b>Phóng Sinh Online</b> là ứng dụng của AppNho dành cho những ai muốn có một khoảnh khắc nhẹ nhàng để gửi gắm điều lành: thả những chú cá koi, chú rùa xuống nước, hoặc thả đàn chim bay lên bầu trời, kèm theo một lời nguyện của riêng mình. Tất cả diễn ra bằng hình ảnh 3D chuyển động ngay trên trình duyệt của bạn.</p>
+<p>Phóng sinh vốn là một việc làm mang ý nghĩa nhân ái, thể hiện lòng thương yêu và sự trân trọng đối với sự sống. Ứng dụng này không thay thế việc làm thật ngoài đời. Nó là một cách trải nghiệm tĩnh lặng: dành vài phút để chọn một khung cảnh đẹp, nghĩ về điều mình mong muốn, rồi nhìn những con vật được tự do. Bạn có thể thả thay cho người thân ở xa, hoặc lưu lại video để gửi tặng họ như một lời chúc.</p>
+<p>Ứng dụng được làm để vừa đẹp vừa nhẹ. Cá bơi uốn lượn với vây và đuôi chuyển động mềm, mặt nước có sóng lan khi cá chạm xuống, chim có thể bay đi, lượn vòng, đáp xuống đất rồi lại bay lên. Trên điện thoại hay máy tính, ứng dụng tự điều chỉnh độ phân giải theo sức máy để hình ảnh luôn mượt.</p>
+</div>
+<div class="ps-grid" style="margin-top:28px;grid-template-columns:repeat(3,1fr)">
+<div class="ps-card c1"><div class="ic">🌅</div><h3>Cảnh 3D chuyển động</h3><p>Ba cảnh hồ cá và năm cảnh bầu trời, có mây, nắng, cây cối, cỏ, đá và đổ bóng. Bạn kéo để xoay góc nhìn và phóng to thu nhỏ tùy ý.</p></div>
+<div class="ps-card c2"><div class="ic">🏷️</div><h3>Gắn tên mình lên con vật</h3><p>Nhập tên của bạn hoặc tên người thân, tên sẽ hiện ngay sát thân cá, rùa hay chim và đi theo chúng suốt lúc bơi, lúc bay.</p></div>
+<div class="ps-card c3"><div class="ic">🙏</div><h3>Lời nguyện trình chiếu</h3><p>Chọn câu có sẵn hoặc tự viết. Lời nguyện hiện dần trên màn hình theo kiểu karaoke, phụ đề hoặc từng chữ nổi lên, chữ lớn và dễ đọc.</p></div>
+<div class="ps-card c4"><div class="ic">🎵</div><h3>Nhạc nền nhẹ nhàng</h3><p>Mỗi lần mở ứng dụng, hệ thống tự xáo trộn và chọn một bài trong danh sách nhạc có sẵn. Biểu tượng loa giúp bạn bật hoặc tắt bất cứ lúc nào.</p></div>
+<div class="ps-card c1"><div class="ic">🎬</div><h3>Quay video</h3><p>Ghi lại khoảnh khắc phóng sinh thành video ngang hoặc dọc, có cả lời nguyện và nhạc nền, dài tối đa 3 phút.</p></div>
+<div class="ps-card c2"><div class="ic">📤</div><h3>Chia sẻ cho mọi người</h3><p>Tải video về hoặc chia sẻ tới Facebook, Instagram, TikTok, X, Zalo. Cũng có nút chia sẻ ứng dụng để mời bạn bè cùng dùng.</p></div>
 </div>
 </div></section>
 
-<section class="ps-sec"><div class="ps-wrap">
-<h2>Cách dùng</h2>
-<p>Bốn bước, chưa đến một phút.</p>
-<ol class="ps-steps">
-<li>Chọn cảnh và loài muốn phóng sinh, rồi chọn số lượng.</li>
-<li>Nhập tên (nếu muốn gắn lên lưng con vật) và chọn hoặc viết lời nguyện.</li>
-<li>Bấm <b>Phóng sinh</b> và ngắm cá, chim được thả.</li>
-<li>Bấm ⏺ để quay video, rồi tải về hoặc chia sẻ.</li>
+<section class="ps-sec" id="canh-va-loai"><div class="ps-wrap">
+<h2>Cảnh và loài vật</h2>
+<p>Bạn chọn phóng sinh dưới nước hoặc trên trời, rồi chọn cảnh và loài mình thích.</p>
+<div class="ps-two">
+<div class="ps-box b1"><h3>🐟 Phóng sinh dưới nước</h3>
+<p><b>Ba cảnh để chọn:</b></p>
+<ul><li><b>Góc sông:</b> dòng sông xanh có nhà tranh, ruộng lúa vàng, bụi tre và những cây lá vàng cam bên bờ.</li><li><b>Ao hồ:</b> mặt hồ phẳng lặng với lá sen và hoa sen, đá lớn ven bờ, đồi xanh phía xa.</li><li><b>Con suối:</b> dòng nước trong chảy chậm, có cây cầu gỗ bắc ngang, núi xa phủ tuyết, hoa dại và đá hai bên bờ.</li></ul>
+<p style="margin-top:14px"><b>Năm loài để thả:</b> cá koi Kohaku (trắng đỏ), Ogon (vàng ánh kim), Sanke (trắng đỏ đen), Showa (đen đỏ trắng) và rùa.</p>
+<p>Khi thả, cá rơi xuống nước tạo sóng lan và bọt khí. Bạn có thể ngắm từ <b>trên mặt hồ</b> hoặc chuyển xuống <b>dưới nước</b> để nhìn cá bơi giữa ánh sáng xuyên qua mặt nước.</p></div>
+<div class="ps-box b2"><h3>🕊️ Phóng sinh trên trời</h3>
+<p><b>Năm cảnh để chọn:</b></p>
+<ul><li><b>Khu rừng:</b> thảm cỏ xanh, rừng thông phía sau, ngôi nhà nhỏ có ống khói và hoa cúc vạn thọ.</li><li><b>Cao nguyên:</b> thung lũng giữa hai sườn đồi xanh, con đường uốn lượn và núi xa có tuyết.</li><li><b>Thảo nguyên:</b> những đồi cỏ xanh lượn sóng, hàng thông phía xa và bầu trời nhiều mây.</li><li><b>Mùa thu:</b> đại lộ cây lá vàng cam, lá rơi nhẹ trong nắng ấm.</li><li><b>Mùa xuân:</b> hoa đào, hoa mai, ruộng lúa xanh, nhà ngói đỏ và cánh hoa bay.</li></ul>
+<p style="margin-top:14px"><b>Ba loài để thả:</b> chim sẻ, bồ câu (ngậm cành ô liu) và chào mào (có mào đen và chấm đỏ bên má).</p>
+<p>Mỗi con chim chọn một hướng đi riêng: có con bay thẳng ra xa, có con lượn vài vòng rồi đáp xuống đất nghỉ, có con bay ra xa rồi quay lại bay ngang qua chỗ bạn đứng.</p></div>
+</div>
+</div></section>
+
+<section class="ps-sec" id="cach-dung"><div class="ps-wrap">
+<h2>Cách dùng chi tiết</h2>
+<p>Làm theo lần lượt từng bước dưới đây, chưa đến một phút là xong.</p>
+<ol class="ps-steps2">
+<li><div><h3>Chọn phóng sinh dưới nước hay trên trời</h3><p>Ở bảng điều khiển phía dưới khung ứng dụng, bấm <b>🐟 Phóng sinh cá</b> để thả cá và rùa xuống nước, hoặc <b>🕊️ Phóng sinh chim</b> để thả chim bay lên trời. Cảnh phía sau sẽ đổi theo lựa chọn của bạn.</p></div></li>
+<li><div><h3>Chọn cảnh và loài</h3><p>Hai ô chọn nằm ngay dưới hai nút trên: ô bên trái chọn <b>cảnh</b> (sông, ao hồ, suối hoặc rừng, cao nguyên, thảo nguyên, mùa thu, mùa xuân), ô bên phải chọn <b>loài</b> (cá koi, rùa hoặc chim). Cảnh đổi ngay khi bạn chọn nên có thể xem thử trước khi thả.</p></div></li>
+<li><div><h3>Chọn số lượng</h3><p>Bấm nhanh <b>1</b>, <b>3</b> hoặc <b>5</b> con, hoặc gõ một số bất kỳ vào ô <b>Nhập số</b> (tối đa 30). Số cá, rùa, chim được thả ra đúng bằng số bạn chọn, mỗi con xuất hiện cách nhau một nhịp ngắn cho tự nhiên.</p></div></li>
+<li><div><h3>Gắn tên (nếu muốn)</h3><p>Nếu bạn muốn gắn tên mình hay tên người thân vào con vật, hãy gõ vào ô tên. Tên sẽ hiện sát thân con cá, rùa hay chim và đi theo chúng. Nếu để trống, các con vật được thả ra không mang tên.</p></div></li>
+<li><div><h3>Chọn hoặc viết lời nguyện</h3><p>Chọn một câu gợi ý trong danh sách, hoặc tự gõ lời nguyện của mình vào ô bên dưới. Bạn cũng có thể chọn kiểu trình chiếu lời nguyện (karaoke, phụ đề, hiện dần từng chữ) hoặc để ứng dụng tự chọn ngẫu nhiên.</p></div></li>
+<li><div><h3>Bấm “Phóng sinh”</h3><p>Bảng điều khiển tự ẩn để bạn thấy trọn cảnh. Cá và rùa lần lượt rơi xuống nước, sóng lan ra từ chỗ chạm. Với chim, từng con vỗ cánh bay lên theo những hướng khác nhau. Lời nguyện hiện dần trên màn hình trong lúc bạn ngắm. Sau vài giây, góc nhìn dưới nước sẽ tự bật để bạn thấy cá bơi.</p></div></li>
+<li><div><h3>Xoay, phóng to, quay video và chia sẻ</h3><p>Kéo chuột hoặc vuốt để xoay góc nhìn, cuộn chuột hoặc chụm hai ngón để phóng to. Bấm nút ⏺ ở góc trên bên trái để quay video, rồi tải về hoặc chia sẻ. Chi tiết ở mục “Quay video &amp; chia sẻ” bên dưới.</p></div></li>
 </ol>
+<div class="ps-two" style="margin-top:26px">
+<div class="ps-box b3"><h3>🖱️ Trên máy tính</h3><ul><li>Kéo chuột để xoay góc nhìn, lăn con lăn để phóng to hoặc thu nhỏ.</li><li>Bấm vào cảnh để ẩn bảng điều khiển. Bấm thêm một lần nữa, nút <b>MỞ BẢNG ĐIỀU KHIỂN</b> sẽ hiện ngay tại vị trí con trỏ. Bấm vào nút để mở bảng, hoặc cứ di chuột đi chỗ khác thì nút tự ẩn.</li><li>Các nút ở góc trên bên trái mờ đi khi bạn không dùng và hiện lại khi bạn di chuột.</li></ul></div>
+<div class="ps-box b4"><h3>📱 Trên điện thoại</h3><ul><li>Vuốt một ngón để xoay, chụm hai ngón để phóng to.</li><li>Chạm vào cảnh để ẩn bảng điều khiển. Chạm lần nữa, nút <b>MỞ BẢNG ĐIỀU KHIỂN</b> hiện tại chỗ chạm trong vài giây.</li><li>Nên xoay ngang máy hoặc bấm <b>Mở toàn màn hình</b> ở phía trên để xem rộng hơn. Trên iPhone, nút toàn màn hình trong ứng dụng không dùng được, hãy dùng nút “Mở toàn màn hình” của trang này.</li></ul></div>
+</div>
+<p style="margin-top:22px"><b>Các nút nhỏ ở góc trên bên trái:</b> 🔊 bật tắt nhạc nền, ⏺ quay video (kèm ô chọn khổ video), ⛶ toàn màn hình, 📤 chia sẻ ứng dụng. Ở hồ cá còn có hai nút <b>Trên mặt hồ</b> và <b>Dưới nước</b> ở góc trên bên phải để đổi góc nhìn.</p>
+</div></section>
+
+<section class="ps-sec" id="loi-nguyen"><div class="ps-wrap">
+<h2>Lời nguyện</h2>
+<p>Lời nguyện là phần để bạn gửi gắm tâm ý. Ứng dụng có sẵn năm câu gợi ý, bạn có thể chọn rồi sửa lại theo ý mình.</p>
+<div class="ps-two">
+<div><div class="ps-quote">Nguyện cho tất cả chúng sinh được an lành, thoát khỏi khổ đau.</div><div class="ps-quote">Con xin phóng sinh để cầu cho gia đình bình an, mạnh khỏe, vạn sự như ý.</div><div class="ps-quote">Nguyện công đức này hồi hướng cho cha mẹ, ông bà, tổ tiên được siêu thoát.</div><div class="ps-quote">Cầu cho người thân bệnh tật tiêu trừ, tai qua nạn khỏi.</div><div class="ps-quote">Nguyện mọi loài được tự do, sống trong yêu thương và bình yên.</div></div>
+<div class="ps-box b5"><h3>Ba kiểu trình chiếu</h3>
+<ul><li><b>Karaoke:</b> cả câu hiện ra ở phần dưới màn hình, từng chữ sáng dần sang màu vàng theo nhịp đọc.</li><li><b>Phụ đề:</b> lời nguyện chia thành từng cụm ngắn, lần lượt hiện lên trong khung nền mờ như phụ đề phim.</li><li><b>Hiện dần từng chữ:</b> từng chữ nổi lên giữa màn hình với ánh sáng dịu, rồi mờ đi khi kết thúc.</li></ul>
+<p style="margin-top:12px">Chữ luôn có viền và đổ sáng nên đọc rõ trên mọi cảnh. Nếu bạn nhập tên, tên sẽ được thêm vào cuối lời nguyện. Lời nguyện cũng được ghi vào video khi bạn quay.</p></div>
+</div>
+</div></section>
+
+<section class="ps-sec" id="quay-video"><div class="ps-wrap">
+<h2>Quay video &amp; chia sẻ</h2>
+<p>Giữ lại khoảnh khắc phóng sinh để xem lại hoặc gửi cho người thân.</p>
+<ol class="ps-steps2">
+<li><div><h3>Chọn khổ video</h3><p>Cạnh nút ⏺ có ô chọn khổ: <b>tự động</b> (theo hướng màn hình đang dùng), <b>ngang 16:9</b> (hợp với YouTube, Facebook) hoặc <b>dọc 9:16</b> (hợp với TikTok, Instagram Reels, Zalo, Facebook Reels).</p></div></li>
+<li><div><h3>Bấm ⏺ để bắt đầu, bấm Dừng để kết thúc</h3><p>Khi quay, giao diện ẩn đi, chỉ còn một thanh nhỏ màu đỏ ở giữa phía trên có đồng hồ và nút Dừng. Thanh này không nằm trong video. Bạn nên bấm ⏺ trước, rồi mới bấm Phóng sinh để video có đủ cảnh thả, lời nguyện và nhạc nền. Video dài tối đa 3 phút.</p></div></li>
+<li><div><h3>Xem lại, tải về hoặc chia sẻ</h3><p>Sau khi dừng, cửa sổ xem lại hiện ra. Bấm <b>Tải về máy</b> để lưu video, hoặc bấm tên một nền tảng. Trên điện thoại, ứng dụng mở hộp chia sẻ của máy để bạn đăng thẳng video lên Facebook, Instagram, TikTok, Zalo. Trên máy tính, các mạng xã hội không nhận video qua đường dẫn, nên ứng dụng sẽ tải video về rồi mở trang của nền tảng để bạn chọn video vừa tải và đăng lên.</p></div></li>
+<li><div><h3>Mời bạn bè dùng thử</h3><p>Bấm nút 📤 để chia sẻ đường dẫn ứng dụng tới Facebook, X, Zalo, Telegram, WhatsApp, sao chép liên kết hoặc dùng hộp chia sẻ của thiết bị.</p></div></li>
+</ol>
+</div></section>
+
+<section class="ps-sec" id="meo"><div class="ps-wrap">
+<h2>Mẹo để trải nghiệm đẹp nhất</h2>
+<div class="ps-two" style="margin-top:20px">
+<div class="ps-box b6"><h3>Để hình ảnh đẹp</h3><ul><li>Dùng trình duyệt mới như Chrome, Edge, Safari hoặc Firefox bản gần đây.</li><li>Dùng chế độ toàn màn hình để nhìn rõ cảnh và lời nguyện.</li><li>Thả vài con mỗi lần sẽ đẹp hơn thả quá nhiều. Thả 3 đến 5 con là đủ sinh động.</li><li>Ở hồ cá, hãy chuyển sang góc nhìn dưới nước và xoay quanh để ngắm cá, rùa từ nhiều phía.</li></ul></div>
+<div class="ps-box b1"><h3>Để máy chạy mượt</h3><ul><li>Ứng dụng tự giảm hoặc tăng độ phân giải theo sức máy, nên nếu hình hơi mờ lúc đầu thì đó là máy đang tự cân bằng để chạy mượt.</li><li>Trên điện thoại, ứng dụng bỏ bớt bóng đổ và giảm số cỏ để nhẹ hơn.</li><li>Đóng bớt các thẻ trình duyệt khác khi quay video.</li><li>Nếu không nghe thấy nhạc, hãy chạm hoặc bấm vào trang một lần, vì trình duyệt chỉ cho phát tiếng sau khi người dùng thao tác.</li></ul></div>
+</div>
+</div></section>
+
+<section class="ps-sec" id="hoi-dap"><div class="ps-wrap">
+<h2>Hỏi đáp</h2>
+<div style="margin-top:22px">
+<details class="ps-q"><summary>Tôi có cần đăng nhập hoặc trả phí không?</summary><p>Không. Ứng dụng chạy thẳng trên trình duyệt, không cần tài khoản và không thu phí.</p></details>
+<details class="ps-q"><summary>Tên và lời nguyện của tôi có bị lưu lại không?</summary><p>Tên và lời nguyện chỉ nằm trong trình duyệt của bạn để hiển thị trên màn hình và ghi vào video. Ứng dụng không có tài khoản người dùng và không gửi nội dung đó lên máy chủ nào.</p></details>
+<details class="ps-q"><summary>Video quay xong nằm ở đâu?</summary><p>Video được tạo ngay trên máy của bạn. Bạn bấm Tải về để lưu, hoặc chia sẻ trực tiếp. Nếu bạn đóng cửa sổ mà chưa tải thì video sẽ mất, vì ứng dụng không lưu video ở đâu khác.</p></details>
+<details class="ps-q"><summary>Vì sao trên máy tính không đăng thẳng video lên Facebook, TikTok được?</summary><p>Các mạng xã hội không cho trang web gửi sẵn video vào bài đăng qua đường dẫn. Vì vậy trên máy tính ứng dụng tải video về, rồi mở trang nền tảng để bạn chọn video đó và đăng. Trên điện thoại thì đăng thẳng được qua hộp chia sẻ của máy.</p></details>
+<details class="ps-q"><summary>Vì sao tôi không nghe thấy nhạc nền?</summary><p>Hãy chạm hoặc bấm vào trang một lần, vì trình duyệt chỉ cho phép phát tiếng sau khi có thao tác của người dùng. Kiểm tra biểu tượng loa ở góc trên bên trái đang ở trạng thái 🔊 và âm lượng thiết bị chưa tắt. Nhạc được tải từ kho nhạc, nên cần có kết nối mạng.</p></details>
+<details class="ps-q"><summary>Ứng dụng bị giật hoặc nóng máy thì làm sao?</summary><p>Hãy giảm số lượng thả xuống 1 đến 3 con, tắt bớt các thẻ trình duyệt khác và dùng chế độ toàn màn hình. Ứng dụng đã tự giảm độ phân giải khi thấy máy chậm, nhưng máy đời cũ vẫn có thể cần giảm số lượng.</p></details>
+<details class="ps-q"><summary>Có thể thả nhiều lần liên tiếp không?</summary><p>Có. Bạn mở lại bảng điều khiển, chọn lại rồi bấm Phóng sinh. Các con vật thả trước vẫn còn trong cảnh. Chim sau một lúc sẽ bay đi hoặc đáp xuống rồi bay đi, còn cá và rùa ở lại bơi trong hồ.</p></details>
+<details class="ps-q"><summary>Việc phóng sinh trong ứng dụng có thay thế phóng sinh thật không?</summary><p>Không. Đây là ứng dụng mô phỏng, mang tính trải nghiệm và hướng thiện. Nếu bạn muốn làm việc thiện thực tế, hãy tìm hiểu kỹ để chọn cách làm có trách nhiệm với sinh vật và môi trường.</p></details>
+</div>
 <p class="ps-note">Ứng dụng mang tính trải nghiệm và hướng thiện, mô phỏng việc phóng sinh bằng hình ảnh 3D; không thay thế việc làm thiện nguyện thực tế.</p>
 </div></section>
 </main>
