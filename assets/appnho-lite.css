@@ -1,0 +1,29 @@
+/* AppNho lite — dự phòng để trang chạy độc lập. Khi tải được assets/appnho.css thật của AppNho thì giao diện gốc sẽ ghi đè lên file này. */
+:root{--navy:#172033;--ink:#465064;--gold:#f3aa20;--sun:#ffd65c;--cream:#fff8e8;--butter:#ffedb8;--mint:#d9f2e3;--sky:#d2ebff;--lav:#e3deff;--peach:#ffdcc6;--pink:#ffd8e6;--display:'Baloo 2','Nunito',system-ui,sans-serif}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:'Nunito',system-ui,'Segoe UI',sans-serif;color:var(--navy);background:var(--cream)}
+a{color:inherit}
+.appnho-logo{display:block;width:132px;height:auto;object-fit:contain}
+.site-header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 24px;background:#fff;border-bottom:3px solid var(--navy)}
+.site-header .brand{display:flex}
+.main-nav{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.main-nav>a,.nav-drop>a{font:800 15px/1 var(--display);text-decoration:none;padding:10px 12px;border-radius:999px;color:var(--navy);white-space:nowrap;display:inline-block}
+.main-nav>a:hover,.nav-drop>a:hover,.main-nav>a.active{background:var(--sun)}
+.nav-drop{position:relative}.nav-drop>a span{font-size:12px;margin-left:2px}
+.dropdown{display:none;position:absolute;top:100%;left:0;min-width:270px;padding:8px;background:#fff;border:2.5px solid var(--navy);border-radius:16px;box-shadow:5px 5px 0 var(--navy);z-index:60}
+.nav-drop.is-open .dropdown{display:block}
+.dropdown a{display:block;padding:8px 12px;border-radius:10px;font:700 14px/1.3 'Nunito',sans-serif;text-decoration:none}
+.dropdown a:hover{background:var(--butter)}
+.menu-toggle{display:none;font-size:24px;line-height:1;background:#fff;border:2.5px solid var(--navy);border-radius:12px;padding:6px 12px;box-shadow:3px 3px 0 var(--navy);cursor:pointer}
+.nav-overlay{display:none}
+@media(max-width:900px){.menu-toggle{display:block}.main-nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;background:#fff;border-bottom:3px solid var(--navy);padding:10px 16px 16px;max-height:80vh;overflow:auto}.main-nav.open{display:flex}.dropdown{position:static;box-shadow:none;border-width:2px;margin:4px 0 6px}}
+.appnho-footer{background:var(--navy);color:#e9edf5;margin-top:56px;padding:48px 24px 20px;border-top:4px solid var(--gold)}
+.appnho-footer-grid{width:min(1180px,100%);margin:auto;display:grid;grid-template-columns:1.3fr 1fr 1fr 1.4fr;gap:32px}
+.appnho-footer h3{font:800 15px/1 var(--display);color:var(--gold);letter-spacing:.5px;margin:0 0 14px}
+.appnho-footer a{display:block;color:#dfe5f1;text-decoration:none;font-weight:600;font-size:14px;padding:4px 0}
+.appnho-footer a:hover{color:var(--sun)}
+.footer-brand img{width:150px;background:#fff;border-radius:14px;padding:8px 12px}
+.footer-brand p{font-weight:600;line-height:1.6}
+.appnho-footer-bottom{width:min(1180px,100%);margin:32px auto 0;padding-top:18px;border-top:1px solid rgba(255,255,255,.18);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px}
+.appnho-footer-bottom a{display:inline;padding:0}
+@media(max-width:800px){.appnho-footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}}
